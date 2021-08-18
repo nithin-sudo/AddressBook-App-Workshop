@@ -1,8 +1,13 @@
 window.addEventListener("DOMContentLoaded", (event) => {
+    contactList = getContactFromStorage()
     document.querySelector(".contact-count").textContent = contactList.length;
     createInnerHtml();
 });
 
+const getContactFromStorage = () => {
+    return localStorage.getItem('contactList') ?
+        JSON.parse(localStorage.getItem('contactList')) : []
+}
 
 const createInnerHtml = () => {
     if (contactList.length == 0) {
@@ -36,24 +41,3 @@ const createInnerHtml = () => {
     }
     document.querySelector("#table-display").innerHTML = innerHtml;
 };
-
-let contactList = [
-    {
-        _id: 1629208165495,
-        _name: "Nithin",
-        _phoneNumber: "91 9689586477",
-        _address: "Tirumala",
-        _city: "Chittoor",
-        _state: "Andhra",
-        _zip: "517504",
-    },
-    {
-        _id: 1629208165495,
-        _name: "Manoj",
-        _phoneNumber: "91 8855886699",
-        _address: "Tada",
-        _city: "Nellore",
-        _state: "Andhra",
-        _zip: "524401",
-    },
-];
