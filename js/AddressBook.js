@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", (event) => {
+    //validate first name
     const name = document.querySelector("#name");
     const nameError = document.querySelector(".name-error");
     name.addEventListener("input", function () {
@@ -14,6 +15,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 
+    //validation for phone number
     const phoneNumber = document.querySelector("#phoneNumber");
     const numberError = document.querySelector(".tel-error");
     phoneNumber.addEventListener("input", function () {
@@ -29,6 +31,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 
+    //validation for zip code
     const zip = document.querySelector("#zip");
     const zipError = document.querySelector(".zip-error");
     zip.addEventListener("input", function () {
@@ -62,7 +65,7 @@ function craeteAndUpdateStorage(contact) {
         contactList = [contact]
     }
     alert("Contact Added Sucessfully")
-    localStorage.setItem("contactList", JSON.stringify(contactList))
+    localStorage.setItem("ContactList", JSON.stringify(contactList))
 }
 
 function createContact() {
