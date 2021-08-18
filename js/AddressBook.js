@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             numberError.textContent = error;
         }
     });
-    
+
     const zip = document.querySelector("#zip");
     const zipError = document.querySelector(".zip-error");
     zip.addEventListener("input", function () {
@@ -108,4 +108,18 @@ function createContact() {
 function getInputValueById(property) {
     let value = document.querySelector(property).value;
     return value;
+}
+
+function resetForm() {
+    setValue("#name", "");
+    setValue("#phoneNumber", "");
+    setValue("#address", "");
+    setValue("#city", "Select City");
+    setValue("#state", "Select State");
+    setValue("#zip", "");
+}
+
+function setValue(id, value) {
+    const element = document.querySelector(id);
+    element.value = value;
 }
