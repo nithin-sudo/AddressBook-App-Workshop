@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             numberError.textContent = error;
         }
     });
-
+    
     const zip = document.querySelector("#zip");
     const zipError = document.querySelector(".zip-error");
     zip.addEventListener("input", function () {
@@ -82,7 +82,7 @@ function save() {
         throw error;
     }
 
-    alert(contact.toString());
+    console.log(contact.toString());
 }
 
 function getInputValueById(property) {
